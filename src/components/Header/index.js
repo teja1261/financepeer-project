@@ -6,7 +6,7 @@ import './index.css'
 
 const Header = props => {
   const onClickLogout = async () => {
-    const url = "http://localhost:6003/logout"
+    const url = "https://pacific-beyond-63184.herokuapp.com/logout"
     const options = {
       headers:{
         "content-type": "application/json"

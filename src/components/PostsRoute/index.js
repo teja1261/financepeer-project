@@ -18,7 +18,7 @@ class PostsRoute extends Component {
     }
 
     renderUserID  = async () =>{
-        const response = await fetch("http://localhost:6003/posts");
+        const response = await fetch("https://pacific-beyond-63184.herokuapp.com/posts");
         let data = []
         if(response.ok === true){
             data =await response.json();

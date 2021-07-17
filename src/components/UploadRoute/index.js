@@ -14,7 +14,7 @@ class Upload extends Component {
     const {jsonData} = this.state;
     for(let i=0; i<jsonData.length; i++){
       console.log(jsonData[i]);
-      const url = "http://localhost:6003/"
+      const url = "https://pacific-beyond-63184.herokuapp.com/"
       const options = {
          headers:{
            "content-type": "application/json"
