@@ -30,11 +30,6 @@ class LoginRoute extends Component {
     history.replace('/')
   }
 
-  onSubmitFailure = errorMsg => {
-    console.log(errorMsg)
-    this.setState({showSubmitError: true, errorMsg})
-  }
-
   submitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
@@ -52,7 +47,8 @@ class LoginRoute extends Component {
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
     } else {
-      this.onSubmitFailure(data.error_msg)
+      this.setState({showSubmitError: true, errorMsg: "UserId and Password didn't match"})
+      console.log(this.state.errorMsg)
     }
   }
 

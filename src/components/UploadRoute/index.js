@@ -10,9 +10,9 @@ class Upload extends Component {
   state = {errMsg: "", showErrorMsg: false, jsonData: []}
 
 
-  enteringDatabase = async () =>{
+  enteringDatabase = async()=>{
     const {jsonData} = this.state;
-    for(let i=0; i<=jsonData.length; i++){
+    for(let i=0; i<jsonData.length; i++){
       console.log(jsonData[i]);
       const url = "http://localhost:6003/"
       const options = {
@@ -42,7 +42,7 @@ class Upload extends Component {
          const reader = new FileReader();
          reader.onload =  () => {
            const parsedData = JSON.parse(reader.result);
-           this.setState({jsonData: parsedData})
+           this.setState({jsonData: parsedData, showErrorMsg: false})
            this.enteringDatabase()
          }
          reader.readAsText(files[0]);

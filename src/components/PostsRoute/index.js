@@ -7,10 +7,10 @@ import './index.css'
 
 class PostsRoute extends Component {
     state = {postData: [{
-        id: 0,
-        userId: 0,
-        title: 'FullStack Developer',
-        body: "All i do is developing"
+        id: "",
+        userId: "",
+        title: '',
+        body: ""
     }]}
 
     componentDidMount(){
@@ -39,7 +39,7 @@ class PostsRoute extends Component {
             <>
                 <Header />
                 <div className="blog-list-container">
-                    {postData.map(item => <PostDetails postData={item} key={item.id} />)}
+                {postData.length === 0?<h1 className="no-data">JSON Data NotFound</h1>:postData.map(item => <PostDetails postData={item} key={item.id} />)}
                 </div>
             </>
         )

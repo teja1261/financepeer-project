@@ -2,3 +2,8 @@
     display: flex;
     flex-direction: column;
 }
+
+.no-data{
+    text-align: center;
+    color: red;
+}

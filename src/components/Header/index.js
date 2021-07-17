@@ -5,7 +5,16 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 const Header = props => {
-  const onClickLogout = () => {
+  const onClickLogout = async () => {
+    const url = "http://localhost:6003/logout"
+    const options = {
+      headers:{
+        "content-type": "application/json"
+      },
+      method: "DELETE",
+    }
+    await fetch(url, options);
+
     Cookies.remove('jwt_token')
     const {history} = props
     history.replace('/login')
