@@ -7,7 +7,7 @@ const fileTypes = ["json"];
 
 class Upload extends Component {
 
-  state = {errMsg: "", showErrorMsg: false, jsonData: []}
+  state = {errMsg: "", successMsg: "", showErrorMsg: false, jsonData: [], suMsg: false}
 
 
   enteringDatabase = async()=>{
@@ -28,7 +28,9 @@ class Upload extends Component {
          })
       }
       const response = await fetch(url, options);
-      console.log(response)
+      if(response.ok === true) {
+        this.setState({successMsg:"Successfully Loaded", suMsg: true})
+      }
     }
  }
 
@@ -54,7 +56,7 @@ class Upload extends Component {
 }
 
   render() {
-    const {showErrorMsg, errMsg} = this.state
+    const {showErrorMsg, errMsg, suMsg, successMsg} = this.state
     return (
       <>
         <Header />
@@ -66,6 +68,7 @@ class Upload extends Component {
                      upload file
                   </button>
             </ReactFileReader>
+            {suMsg && <p className="success-message">{successMsg}</p>}
             {showErrorMsg && <p className="error-message">*{errMsg}</p>}
           </div>
         </div>
