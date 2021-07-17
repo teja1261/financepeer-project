@@ -1,6 +1,6 @@
 import './index.css'
 
-const PostItems = props =>{
+const PostDetails = props =>{
     const {postData} = props
     const {id, title, body} = postData
     return(
@@ -14,4 +14,4 @@ const PostItems = props =>{
     )
 }
 
-export default PostItems
+export default PostDetails
