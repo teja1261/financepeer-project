@@ -73,3 +73,15 @@
   line-height: 16px;
   color: #ff0b37;
 }
+
+.success-message {
+  align-self: start;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #00FF00; 
+}
